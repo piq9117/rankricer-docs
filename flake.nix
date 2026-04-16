@@ -12,12 +12,17 @@
       devShells = forAllSystems (system: 
       let
         pkgs = nixpkgsFor.${system};
+        build-book = pkgs.writeScriptBin "build-book" ''
+          rm -r ./docs || true
+          ${pkgs.mdbook}/bin/mdbook build -d ./docs
+        '';
       in {
         default = pkgs.mkShell {
           buildInputs = with pkgs; [
             mdbook
             treefmt
             mdformat
+            build-book
           ];
           shellHook = ''
             export PS1='[$PWD]\n❄ '
