@@ -15,6 +15,7 @@
         build-book = pkgs.writeScriptBin "build-book" ''
           rm -r ./docs || true
           ${pkgs.mdbook}/bin/mdbook build -d ./docs
+          cp CNAME ./docs
         '';
       in {
         default = pkgs.mkShell {
