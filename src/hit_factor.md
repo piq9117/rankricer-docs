@@ -7,6 +7,7 @@ Look for the file you downloaded from practiscore.
 
 After selecting the file. You will see this indicator in the bottom of the page.
 ![rankricer-upload-indicator](images/rankricer-upload-indicator.png)
+
 It should take under a minute to upload the file.
 
 If you click on the "Check progress here", you will see this page.
